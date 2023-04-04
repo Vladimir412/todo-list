@@ -12,8 +12,8 @@ type TListContainer = {
 
 const ListsContainer = () => {
   const { data } = useAppSelector((state) => state.tasks);
-  let listTodo
-  let listDone
+  let listTodo: any = []
+  let listDone: any = []
 
 
   data.forEach((i: TListContainer) => {
