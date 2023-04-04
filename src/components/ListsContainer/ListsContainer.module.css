@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 900px;
+    /* margin: auto; */
+    margin-top: 50px;
+}
+
+.list {
+    list-style: none;
+     margin-bottom: 10;
+}
