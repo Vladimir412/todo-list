@@ -5,6 +5,7 @@
     height: fit-content;
     display: flex;
     flex-flow: row nowrap;
+    margin-bottom: 10px;
 }
 
 .task {

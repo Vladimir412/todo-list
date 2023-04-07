@@ -6,20 +6,14 @@ import { deleteTask, changeStatusTask } from "../../Services/Reducers/redusers";
 type TTask = {
   task: string,
   id: string,
-  status?: string
+  status?: string,
 };
 
   const Element: FC<TTask> = ({ task, id }) => {
   const dispatch = useAppDispatch();
-  const { data } = useAppSelector((state) => state.tasks);
 
   const deleteElement = () => {
-      let newArr: any = [];
-      data.forEach((i) => {
-        console.log(id);
-        if (i.id !== id) newArr.push(i);
-      });
-      dispatch(deleteTask(newArr));
+      dispatch(deleteTask(id));
   };
 
   const changeStatus = () => {
@@ -27,7 +21,7 @@ type TTask = {
   }
 
   return (
-    <div className={styles.container} id={id}>
+    <li className={styles.container} key={id}>
       <p className={styles.task}>{task}</p>
       <button className={styles.button} onClick={deleteElement} type="button">
         Delete
@@ -35,7 +29,7 @@ type TTask = {
       <button className={styles.button} onClick={changeStatus} type="button">
         Change status
       </button>
-    </div>
+    </li>
   );
 };
 
